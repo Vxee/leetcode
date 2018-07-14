@@ -1,11 +1,11 @@
 var numJewelsInStones = function(J, S) {
-    let arr = new Array(S.length);
-    let count = 0;
-    for(let len = S.length,i = 0; i < len; i++){
-        arr[S[i]] = arr[S[i]] ? arr[S[i]] + 1 : 1;
+    var arr = [],
+        count = 0;
+    for(var i = 0; i < J.length; i++){
+        arr.push(J[i]);
     }
-    for(let len = J.length, j = 0; j < len; j++){
-        count += arr[J[j]] ? arr[J[j]] : 0;
+    for(var j = 0; j < S.length; j++){
+        if(arr.indexOf(S[j]) > -1) count++;
     }
     return count;
 };
